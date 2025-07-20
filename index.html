@@ -108,8 +108,8 @@
       <input type="text" id="producto" value="Vela decorativa de corazón pequeño" readonly />
 
       <label for="aroma">Selecciona el aroma:</label>
-      <select name="aroma" id="aroma">
-        <option value="">-- Selecciona un aroma --</option>
+      <select id="aroma" onchange="actualizarPrecio()">
+        <option value="Sin aroma" selected>Sin aroma</option>
         <option value="patchouli">Terroso dulce - Pachuli</option>
         <option value="sweet orange">Naranja dulce</option>
         <option value="rose">Rosa</option>
