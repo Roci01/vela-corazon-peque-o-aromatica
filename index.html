@@ -280,7 +280,8 @@
     function enviarWhatsapp() {
         var producto = document.getElementById('producto').value.trim();
         var aroma = aromaSelect.value.trim();
-        var color = document.getElementById('color').value.trim();
+        var color = document.querySelector('input[name="color"]:checked');
+        color = color ? color.value.trim() : "";;
         var cantidad = parseInt(document.getElementById('cantidad').value.trim(), 10);
         var nombre = document.getElementById('nombre').value.trim();
         var empaque = empaqueSelect.value.trim();
