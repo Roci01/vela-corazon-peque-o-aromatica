@@ -4,86 +4,101 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Vela decorativa de corazón pequeño</title>
-  <style>
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      background: #fff8f0;
-      padding: 20px;
-    }
+<style>
+  body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #fff8f0;
+    padding: 20px;
+  }
 
-    .container {
-      max-width: 500px;
-      margin: auto;
-      background: white;
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 0 15px rgba(0,0,0,0.1);
-    }
+  .container {
+    max-width: 500px;
+    margin: auto;
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  }
 
-    h2 {
-      text-align: center;
-      color: #333;
-      margin-bottom: 20px;
-    }
+  h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+  }
 
-    label {
-      display: block;
-      margin-top: 15px;
-      font-weight: bold;
-    }
+  label {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+  }
 
-    input[type="text"], input[type="number"], select {
-      width: 100%;
-      padding: 10px;
-      border-radius: 8px;
-      border: 1px solid #ccc;
-      margin-top: 5px;
-      font-size: 1rem;
-    }
+  input[type="text"], input[type="number"], select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    margin-top: 5px;
+    font-size: 1rem;
+  }
 
-    .color-options {
-      display: flex;
-      margin-top: 10px;
-      gap: 10px;
-    }
+  .submit-button {
+    width: 100%;
+    margin-top: 25px;
+    padding: 12px;
+    background-color: #222;
+    color: white;
+    font-size: 1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+  }
 
-    .color-circle {
-      width: 30px;
-      height: 30px;
-      border-radius: 50%;
-      cursor: pointer;
-      border: 2px solid transparent;
-      box-shadow: 0 0 3px rgba(0,0,0,0.3);
-    }
+  .submit-button:hover {
+    background-color: #444;
+  }
 
-    .color-circle.selected {
-      border: 2px solid #000;
-    }
+  #precio {
+    margin-top: 25px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+    color: #000;
+  }
 
-    .submit-button {
-      width: 100%;
-      margin-top: 25px;
-      padding: 12px;
-      background-color: #222;
-      color: white;
-      font-size: 1rem;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-    }
+  /* 🎨 COLORES VISUALES */
+  .color-group {
+    margin-bottom: 20px;
+  }
 
-    .submit-button:hover {
-      background-color: #444;
-    }
+  .color-group-title {
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
 
-    #precio {
-      margin-top: 25px;
-      font-size: 1.2rem;
-      font-weight: bold;
-      text-align: center;
-      color: #000;
-    }
-  </style>
+  .color-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(35px, 1fr));
+    gap: 10px;
+  }
+
+  .color-option input {
+    display: none;
+  }
+
+  .color-circle {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: inline-block;
+    border: 2px solid transparent;
+    cursor: pointer;
+    box-shadow: 0 0 3px rgba(0,0,0,0.3);
+  }
+
+  .color-option input:checked + .color-circle {
+    border-color: #000;
+  }
+</style>
 </head>
 <body>
   <div class="container">
@@ -111,19 +126,81 @@
       </select>
 
       <label>Color:</label>
-      <div class="color-options" id="colorOptions">
-        <div class="color-circle" style="background-color: #90EE90;" data-color="Verde claro"></div>
-        <div class="color-circle" style="background-color: #f66b92;" data-color="Rosado suave"></div>
-        <div class="color-circle" style="background-color: #ff3855;" data-color="Rojo neón"></div>
-        <div class="color-circle" style="background-color: #3f00ff;" data-color="Azul Ultramarino"></div>
-        <div class="color-circle" style="background-color: #fe59c2;" data-color="Fucsia"></div>
-        <div class="color-circle" style="background-color: #ffa500;" data-color="Naranja"></div>
-        <div class="color-circle" style="background-color: #bf00ff;" data-color="Púrpura"></div>
-        <div class="color-circle" style="background-color: #ffd67b;" data-color="Amarillo pastel"></div>
-        <div class="color-circle" style="background-color: #a3989d;" data-color="Lila grisáceo"></div>
-        <div class="color-circle" style="background-color: red;" data-color="Rojo"></div>
-      </div>
-      <input type="hidden" id="color" />
+     <!-- 💗 ROSADOS / ROJOS -->
+<div class="color-group">
+  <div class="color-group-title">Rosados y Rojos</div>
+  <div class="color-grid">
+    <label class="color-option"><input type="radio" name="color" value="hot-pink"><span class="color-circle" style="background-color:#ff69b4;"></span></label>
+    <label class="color-option"><input type="radio" name="color" value="pink"><span class="color-circle" style="background-color:#ffc0cb;"></span></label>
+    <label class="color-option"><input type="radio" name="color" value="wild-rose"><span class="color-circle" style="background-color:#db5a8f;"></span></label>
+    <label class="color-option"><input type="radio" name="color" value="red"><span class="color-circle" style="background-color:#ff0000;"></span></label>
+    <label class="color-option"><input type="radio" name="color" value="fluorescent-fuchsia"><span class="color-circle" style="background-color:#ff1493;"></span></label>
+    <label class="color-option"><input type="radio" name="color" value="rose-red"><span class="color-circle" style="background-color:#c21e56;"></span></label>
+    <label class="color-option"><input type="radio" name="color" value="burgundy"><span class="color-circle" style="background-color:#800020;"></span></label>
+    <label class="color-option"><input type="radio" name="color" value="crimson"><span class="color-circle" style="background-color:#dc143c;"></span></label>
+  </div>
+</div>
+
+<!-- 🧡 NARANJAS Y AMARILLOS -->
+<div class="color-group">
+  <div class="color-group-title">Naranjas y Amarillos</div>
+  <div class="color-grid">
+    <label class="color-option"><input type="radio" name="color" value="orange"><span class="color-circle" style="background-color:#ffa500;"></span></label>
+    <label class="color-option"><input type="radio" name="color" value="coral"><span class="color-circle" style="background-color:#ff7f50;"></span></label>
+    <label class="color-option"><input type="radio" name="color" value="peach"><span class="color-circle" style="background-color:#ffe5b4;"></span></label>
+    <label class="color-option"><input type="radio" name="color" value="yellow"><span class="color-circle" style="background-color:#ffff00;"></span></label>
+    <label class="color-option"><input type="radio" name="color" value="lemon-yellow"><span class="color-circle" style="background-color:#fff44f;"></span></label>
+  </div>
+</div>
+
+<!-- 💚 VERDES -->
+<div class="color-group">
+  <div class="color-group-title">Verdes</div>
+  <div class="color-grid">
+    <label class="color-option"><input type="radio" name="color" value="bright-green"><span class="color-circle" style="background-color:#66ff66;"></span></label>
+    <label class="color-option"><input type="radio" name="color" value="olive-green"><span class="color-circle" style="background-color:#808000;"></span></label>
+    <label class="color-option"><input type="radio" name="color" value="green"><span class="color-circle" style="background-color:#008000;"></span></label>
+    <label class="color-option"><input type="radio" name="color" value="dark-green"><span class="color-circle" style="background-color:#006400;"></span></label>
+  </div>
+</div>
+
+<!-- 💙 AZULES -->
+<div class="color-group">
+  <div class="color-group-title">Azules</div>
+  <div class="color-grid">
+    <label class="color-option"><input type="radio" name="color" value="blue"><span class="color-circle" style="background-color:#0000ff;"></span></label>
+    <label class="color-option"><input type="radio" name="color" value="aqua-blue"><span class="color-circle" style="background-color:#00ffff;"></span></label>
+    <label class="color-option"><input type="radio" name="color" value="lake-blue"><span class="color-circle" style="background-color:#5dade2;"></span></label>
+    <label class="color-option"><input type="radio" name="color" value="cyan"><span class="color-circle" style="background-color:#00b7eb;"></span></label>
+    <label class="color-option"><input type="radio" name="color" value="indigo"><span class="color-circle" style="background-color:#4b0082;"></span></label>
+    <label class="color-option"><input type="radio" name="color" value="teal"><span class="color-circle" style="background-color:#008080;"></span></label>
+  </div>
+</div>
+
+<!-- 💜 MORADOS / VINO -->
+<div class="color-group">
+  <div class="color-group-title">Morados y Vino</div>
+  <div class="color-grid">
+    <label class="color-option"><input type="radio" name="color" value="purple"><span class="color-circle" style="background-color:#800080;"></span></label>
+    <label class="color-option"><input type="radio" name="color" value="grape-purple"><span class="color-circle" style="background-color:#6f2da8;"></span></label>
+    <label class="color-option"><input type="radio" name="color" value="lilac"><span class="color-circle" style="background-color:#c8a2c8;"></span></label>
+    <label class="color-option"><input type="radio" name="color" value="plum"><span class="color-circle" style="background-color:#8e4585;"></span></label>
+    <label class="color-option"><input type="radio" name="color" value="garnet"><span class="color-circle" style="background-color:#733635;"></span></label>
+    <label class="color-option"><input type="radio" name="color" value="wine-red"><span class="color-circle" style="background-color:#722f37;"></span></label>
+    <label class="color-option"><input type="radio" name="color" value="violet"><span class="color-circle" style="background-color:#7f00ff;"></span></label>
+    <label class="color-option"><input type="radio" name="color" value="ultramarine"><span class="color-circle" style="background-color:#3f00ff;"></span></label>
+  </div>
+</div>
+
+<!-- ⚫ NEUTROS -->
+<div class="color-group">
+  <div class="color-group-title">Neutros</div>
+  <div class="color-grid">
+    <label class="color-option"><input type="radio" name="color" value="black"><span class="color-circle" style="background-color:#000000;"></span></label>
+    <label class="color-option"><input type="radio" name="color" value="coffee"><span class="color-circle" style="background-color:#4b3621;"></span></label>
+    <label class="color-option"><input type="radio" name="color" value="brown"><span class="color-circle" style="background-color:#a52a2a;"></span></label>
+  </div>
+</div>
 
       <label>¿Deseas empaque especial de regalo?</label>
       <select id="empaqueRegalo" onchange="actualizarPrecio()">
