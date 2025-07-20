@@ -107,22 +107,28 @@
       <label>Producto:</label>
       <input type="text" id="producto" value="Vela decorativa de corazón pequeño" readonly />
 
-      <label>Aroma:</label>
-      <select id="aroma" onchange="actualizarPrecio()">
-        <option value="Sin aroma" selected>Sin aroma</option>
-        <option value="Vainilla">Vainilla</option>
-        <option value="Rosa">Rosa</option>
-        <option value="Arbol">Árbol de té</option>
-        <option value="Menta">Menta</option>
-        <option value="Naranja">Naranja dulce</option>
-        <option value="Limón">Limón</option>
-        <option value="Eucalipto">Eucalipto</option>
-        <option value="Romero">Romero</option>
-        <option value="Incienso">Incienso</option>
-        <option value="Lima">Naranja-lima</option>
-        <option value="Tropical">Aroma Tropical</option>
-        <option value="Canela">Canela</option>
-        <option value="Hierba de limón">Hierba de limón</option>
+      <label for="aroma">Selecciona el aroma:</label>
+      <select name="aroma" id="aroma">
+        <option value="">-- Selecciona un aroma --</option>
+        <option value="patchouli">Terroso dulce - Pachuli</option>
+        <option value="sweet orange">Naranja dulce</option>
+        <option value="rose">Rosa</option>
+        <option value="citronella">Hierba cítrica - Citronela</option>
+        <option value="bergamot">Cítrico floral - Bergamota</option>
+        <option value="eucalyptus">Eucalipto</option>
+        <option value="sandalwood">Madera dulce - Sándalo</option>
+        <option value="rosemary">Romero</option>
+        <option value="peppermint">Menta</option>
+        <option value="lavender">Lavanda</option>
+        <option value="tea tree">Árbol de té</option>
+        <option value="clary sage">Hierba suave - Salvia esclarea</option>
+        <option value="chamomile">Manzanilla</option>
+        <option value="jasmine">Jazmín</option>
+        <option value="frankincense">Incienso suave</option>
+        <option value="cinnamon">Canela</option>
+        <option value="geranium">Floral cítrico - Geranio</option>
+        <option value="ylang ylang">Floral dulce exótico - Ylang Ylang</option>
+        <option value="lemon">Limón</option>
       </select>
 
       <label>Color:</label>
